@@ -1,19 +1,16 @@
 import pandas as pd
 import networkx as nx
-#edges = pd.DataFrame({'source': ["aaa-web", "aaa", "aaa"],
-#               'target': ["aaa", "cons", "bbb"],
-#               'weight':[1,1,1]})
 
 edges = pd.read_csv('network-test.csv')
 
-#G = nx.from_pandas_edgelist(edges,'source','target',edge_attr=True, create_using=nx.MultiDiGraph())
 G = nx.from_pandas_edgelist(edges,'source','target',create_using=nx.MultiDiGraph())
 
 from pyvis.network import Network
 pyvis_G = Network()
 pyvis_G.from_nx(G)
 #pyvis_G.enable_physics(True)  #html上でレイアウト動かしたくない場合false
-#pyvis_G.show_buttons()
+
+#pyvis_G.show_buttons()   # 描画設定をGUIで変更する場合はコメントを外して、set_optionsをコメントアウトする
 
 pyvis_G.set_options(
 """
