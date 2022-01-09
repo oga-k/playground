@@ -1,0 +1,8 @@
+source,target
+test-web,test
+test,test-prod
+test-prod,test-DB
+test3-web,test3
+test3,test3-prod
+test3-prod,test-DB
+test2-web,test
